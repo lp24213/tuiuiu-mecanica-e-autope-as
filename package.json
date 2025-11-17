@@ -1,0 +1,9 @@
+{
+  "name": "tuiuiu-mecanica-e-autopecas",
+  "version": "1.0.0",
+  "description": "Site da Tuiuiu Mecânica e Autopeças",
+  "scripts": {
+    "build": "echo 'No build step required'"
+  }
+}
+
