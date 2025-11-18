@@ -1,17 +1,33 @@
-// Splash Screen Animation
+// Splash Screen Animation - Otimizado para carregamento rápido
 const splashScreen = document.getElementById('splashScreen');
 
 if (splashScreen) {
-    // Hide splash screen after page loads
-    window.addEventListener('load', () => {
+    // Hide splash screen quickly after DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', hideSplash);
+    } else {
+        hideSplash();
+    }
+    
+    function hideSplash() {
+        // Mostra por apenas 0.6 segundos para não atrasar o carregamento
         setTimeout(() => {
             splashScreen.classList.add('hidden');
-            // Remove from DOM after animation completes
             setTimeout(() => {
                 splashScreen.style.display = 'none';
-            }, 600);
-        }, 2000); // Show for 2 seconds
-    });
+            }, 400);
+        }, 600);
+    }
+    
+    // Fallback: esconde após 1 segundo máximo
+    setTimeout(() => {
+        if (splashScreen && !splashScreen.classList.contains('hidden')) {
+            splashScreen.classList.add('hidden');
+            setTimeout(() => {
+                splashScreen.style.display = 'none';
+            }, 400);
+        }
+    }, 1000);
 }
 
 // Menu Toggle

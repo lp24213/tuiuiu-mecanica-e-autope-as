@@ -117,7 +117,7 @@ body {
     width: 0%;
     background: linear-gradient(90deg, var(--primary-color) 0%, #2a2a2a 100%);
     border-radius: 2px;
-    animation: loaderProgress 1.5s ease-in-out;
+    animation: loaderProgress 0.6s ease-in-out;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -136,7 +136,9 @@ body {
 /* Header */
 .header {
     background: rgba(255, 255, 255, 0.98);
-    box-shadow: var(--shadow-header);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 
+                0 2px 8px rgba(0, 0, 0, 0.04),
+                0 0 0 1px rgba(0, 0, 0, 0.02);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -147,9 +149,12 @@ body {
 }
 
 .header:hover {
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 
+                0 4px 16px rgba(0, 0, 0, 0.08),
+                0 0 0 1px rgba(0, 0, 0, 0.04);
     border-bottom-color: rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 1);
+    transform: translateY(0);
 }
 
 .header .container {
@@ -1034,25 +1039,29 @@ body {
 
 .social-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
+    align-items: center;
 }
 
 .social-link {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    justify-content: center;
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: all 0.3s ease;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .social-link:hover {
     color: white;
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px) scale(1.1);
 }
 
 .social-link.whatsapp:hover {
@@ -1067,6 +1076,10 @@ body {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
+}
+
+.social-link span {
+    display: none;
 }
 
 /* CTA Section */
