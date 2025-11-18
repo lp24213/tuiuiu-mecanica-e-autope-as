@@ -33,9 +33,9 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 /* Header */
@@ -59,7 +59,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 20px;
+    padding: 1.75rem 40px;
 }
 
 .logo {
@@ -83,15 +83,17 @@ body {
 
 .nav {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .nav a {
     text-decoration: none;
     color: var(--text-dark);
     font-weight: 500;
+    font-size: 1rem;
     transition: color 0.3s ease;
     position: relative;
+    letter-spacing: -0.01em;
 }
 
 .nav a:hover {
@@ -142,13 +144,13 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    min-height: 90vh;
+    min-height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #fafafa 0%, #ffffff 50%, #fafafa 100%);
     overflow: hidden;
-    padding: 4rem 20px;
+    padding: 6rem 40px;
 }
 
 .hero::before {
@@ -203,18 +205,23 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 800;
     color: var(--text-dark);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
     color: var(--text-light);
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     font-weight: 400;
+    line-height: 1.7;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-buttons {
@@ -225,8 +232,8 @@ body {
 }
 
 .btn {
-    padding: 0.875rem 2rem;
-    border-radius: 0.5rem;
+    padding: 1rem 2.5rem;
+    border-radius: 0.75rem;
     font-weight: 600;
     text-decoration: none;
     display: inline-block;
@@ -437,22 +444,23 @@ body {
 /* Services Section */
 .services,
 .services-preview {
-    padding: 6rem 0;
+    padding: 8rem 0;
     background: var(--bg-white);
 }
 
 .products-preview {
-    padding: 6rem 0;
+    padding: 8rem 0;
     background: var(--bg-light);
 }
 
 .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 800;
     text-align: center;
     color: var(--text-dark);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     position: relative;
+    letter-spacing: -0.02em;
 }
 
 .section-title::after {
@@ -469,9 +477,11 @@ body {
 
 .section-subtitle {
     text-align: center;
+    font-size: 1.25rem;
     color: var(--text-light);
-    font-size: 1.125rem;
-    margin-bottom: 3rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
 }
 
 .services-grid {
@@ -483,16 +493,18 @@ body {
 
 .service-card {
     background: var(--bg-white);
-    padding: 2.5rem;
-    border-radius: 1rem;
+    padding: 3rem 2.5rem;
+    border-radius: 1.5rem;
     box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid var(--border-color);
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     box-shadow: var(--shadow-xl);
     border-color: var(--primary-color);
     border-width: 2px;
@@ -512,15 +524,17 @@ body {
 }
 
 .service-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.625rem;
+    font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 1rem;
+    letter-spacing: -0.01em;
 }
 
 .service-card p {
     color: var(--text-light);
-    line-height: 1.7;
+    line-height: 1.8;
+    font-size: 1.0625rem;
 }
 
 /* Products Section */
@@ -566,18 +580,19 @@ body {
 
 .product-card {
     background: var(--bg-white);
-    border-radius: 1rem;
+    border-radius: 1.5rem;
     overflow: hidden;
     box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid var(--border-color);
     display: block;
     text-decoration: none;
     color: inherit;
+    position: relative;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     box-shadow: var(--shadow-xl);
     border-color: var(--primary-color);
     border-width: 2px;
@@ -628,15 +643,17 @@ body {
 
 .product-card h3 {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-dark);
-    margin: 1.5rem 1.5rem 0.75rem;
+    margin: 2rem 2rem 1rem;
+    letter-spacing: -0.01em;
 }
 
 .product-card p {
     color: var(--text-light);
-    line-height: 1.7;
-    margin: 0 1.5rem 1.5rem;
+    line-height: 1.8;
+    margin: 0 2rem 2rem;
+    font-size: 1rem;
 }
 
 /* About Section */
@@ -1313,6 +1330,257 @@ body {
 
     .product-actions .btn {
         width: 100%;
+    }
+}
+
+/* Agronegócio Page Styles */
+.agronegocio-hero {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+}
+
+.agronegocio-hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.agronegocio-description {
+    font-size: 1.125rem;
+    line-height: 1.9;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+.agronegocio-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-white);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.agronegocio-image {
+    position: relative;
+}
+
+.agronegocio-image-placeholder {
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    background: var(--bg-lighter);
+}
+
+.agronegocio-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.agronegocio-services {
+    padding: 8rem 0;
+    background: var(--bg-white);
+}
+
+.agronegocio-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.agronegocio-service-card {
+    background: var(--bg-white);
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.agronegocio-service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.agronegocio-service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.agronegocio-service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+}
+
+.service-icon-large {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.agronegocio-service-card:hover .service-icon-large {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.agronegocio-service-card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.agronegocio-service-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.0625rem;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-features li {
+    padding: 0.75rem 0;
+    color: var(--text-light);
+    position: relative;
+    padding-left: 1.75rem;
+    font-size: 0.95rem;
+}
+
+.service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.agronegocio-why {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.why-card {
+    background: var(--bg-white);
+    padding: 3rem 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--border-color);
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+}
+
+.why-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.why-card:hover .why-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: var(--shadow-lg);
+}
+
+.why-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.why-card p {
+    color: var(--text-light);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .agronegocio-hero-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .agronegocio-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .agronegocio-services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
 
