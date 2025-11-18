@@ -38,7 +38,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Entre em Contato</h1>
-            <p>Estamos prontos para atender você</p>
+            <p>Faça já sua cotação de peças e mão de obra conosco</p>
         </div>
         <div class="hero-truck-bg">
             <img src="./images/loja-autopecas.png" alt="Caminhão na Oficina" class="truck-bg-img"
@@ -46,8 +46,22 @@
         </div>
     </section>
 
+    <!-- CTA Cotação Section -->
+    <section class="cta-section" style="margin-top: 0;">
+        <div class="container">
+            <h2>Faça Já Sua Cotação</h2>
+            <p>Entre em contato e solicite orçamento para peças e serviços. Atendimento rápido e preços competitivos!</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="https://wa.me/5566999235228?text=Olá! Gostaria de solicitar um orçamento de peças." target="_blank" class="btn btn-primary" style="background: #25D366; border: none;">
+                    📱 Cotação via WhatsApp
+                </a>
+                <a href="#contact-form" class="btn btn-secondary">📝 Formulário de Cotação</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
-    <section class="contact">
+    <section class="contact" id="contact-form">
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info">
@@ -76,7 +90,8 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
-                    <h3 style="margin-bottom: 1.5rem;">Envie sua Mensagem</h3>
+                    <h3 style="margin-bottom: 1rem;">Faça Seu Orçamento</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 0.95rem;">Solicite orçamento para peças ou serviços de mão de obra</p>
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
                             <input type="text" id="name" placeholder="Seu nome" required>
@@ -88,9 +103,17 @@
                             <input type="email" id="email" placeholder="Seu e-mail">
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Sua mensagem" required></textarea>
+                            <select id="tipo-orcamento" style="width: 100%; padding: 0.875rem; border: 1px solid var(--border-color); border-radius: 0.5rem; font-size: 1rem; font-family: inherit; background: var(--bg-white);">
+                                <option value="">Tipo de Orçamento</option>
+                                <option value="pecas">Orçamento de Peças</option>
+                                <option value="mao-obra">Orçamento de Mão de Obra</option>
+                                <option value="ambos">Peças + Mão de Obra</option>
+                            </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Descreva o que você precisa (peças, serviços, modelo do veículo, etc.)" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Solicitar Orçamento</button>
                     </form>
                 </div>
             </div>
