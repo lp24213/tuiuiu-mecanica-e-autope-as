@@ -378,6 +378,7 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary::before {
@@ -394,8 +395,9 @@ body {
 
 .btn-secondary:hover {
     color: white;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
 }
 
 .btn-secondary:hover::before {
