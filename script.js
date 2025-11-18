@@ -1,3 +1,19 @@
+// Splash Screen Animation
+const splashScreen = document.getElementById('splashScreen');
+
+if (splashScreen) {
+    // Hide splash screen after page loads
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            splashScreen.classList.add('hidden');
+            // Remove from DOM after animation completes
+            setTimeout(() => {
+                splashScreen.style.display = 'none';
+            }, 600);
+        }, 2000); // Show for 2 seconds
+    });
+}
+
 // Menu Toggle
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.querySelector('.nav');

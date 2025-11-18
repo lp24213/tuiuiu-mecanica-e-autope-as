@@ -5,23 +5,24 @@
 }
 
 :root {
-    --primary-color: #1a1a1a;
+    --primary-color: #0a0a0a;
     --primary-hover: #000000;
-    --primary-gradient: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-    --secondary-color: #f5f5f5;
+    --primary-gradient: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    --secondary-color: #f8f8f8;
     --accent-color: #ffffff;
-    --text-dark: #1a1a1a;
-    --text-light: #666666;
+    --text-dark: #0f0f0f;
+    --text-light: #5a5a5a;
     --bg-white: #FFFFFF;
-    --bg-light: #FAFAFA;
-    --bg-lighter: #F5F5F5;
-    --bg-gradient: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    --border-color: #E5E5E5;
-    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
-    --glow: 0 0 30px rgba(0, 0, 0, 0.15);
+    --bg-light: #F8F8F8;
+    --bg-lighter: #F0F0F0;
+    --bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    --border-color: #E0E0E0;
+    --shadow-sm: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.12), 0 2px 6px -1px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 24px 48px -8px rgba(0, 0, 0, 0.18), 0 8px 16px -4px rgba(0, 0, 0, 0.12);
+    --shadow-header: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+    --glow: 0 0 40px rgba(0, 0, 0, 0.12);
 }
 
 body {
@@ -38,21 +39,117 @@ body {
     padding: 0 40px;
 }
 
+/* Splash Screen / Loading Animation */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 1;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.splash-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.splash-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.splash-logo-wrapper {
+    animation: logoFadeInScale 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.splash-logo {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.splash-loader {
+    width: 200px;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.loader-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary-color) 0%, #2a2a2a 100%);
+    border-radius: 2px;
+    animation: loaderProgress 1.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes loaderProgress {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 70%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
 /* Header */
 .header {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: var(--shadow-sm);
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: var(--shadow-header);
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header:hover {
-    box-shadow: var(--shadow-md);
-    border-bottom-color: rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-lg);
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 1);
 }
 
 .header .container {
