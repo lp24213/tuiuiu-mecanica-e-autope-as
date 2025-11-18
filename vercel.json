@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "echo 'No build step required'",
+  "outputDirectory": ".",
+  "framework": null,
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/(.*)",
+      "destination": "/$1"
     }
   ]
 }

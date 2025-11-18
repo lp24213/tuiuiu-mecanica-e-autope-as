@@ -4,6 +4,10 @@
   "description": "Site da Tuiuiu Mecânica e Autopeças",
   "scripts": {
     "build": "echo 'No build step required'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lp24213/tuiuiu-mecanica-e-autope-as.git"
   }
 }
 
